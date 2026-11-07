@@ -29,12 +29,18 @@
 - **触发位置**：左右下角、仅左下角、仅右下角三档
 - **保持挂起**：松手后菜单不收起，可以继续滑动点选应用
 - **触发范围**：底角手势的识别区域大小，24–160 dp
-- **命中范围**：手指与图标的判定半径，40–140 dp，默认 100 dp；拖动滑条时实时预览每一格的命中圈
+- **命中范围**：手指与图标的判定半径，40–140 dp，默认 100 dp
 - **数量上限**：扇形中同时显示的条目数，1–6；「更多」入口不占位
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/settings-radial.jpg" width="330" alt="扇形相关设置页" />
+  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/trigger-range.jpg" width="330" alt="触发范围设置" />
 </p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/hit-range-preview.jpg" width="330" alt="拖动命中范围时的实时预览" />
+</p>
+
+拖动命中范围滑条时，屏幕上会按当前数值画出每一格的判定圈，松手即保存。
 
 ### 扇形应用
 
@@ -45,7 +51,7 @@
 - **滑动选中**：滑到某一格时该图标放大至 1.2 倍作为反馈，判定依据是手指与图标圆心的距离，松手即启动
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/hit-range-preview.jpg" width="330" alt="命中范围实时预览" />
+  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/radial-apps.jpg" width="330" alt="扇形应用页" />
 </p>
 
 ### 「更多」面板
@@ -65,7 +71,7 @@
 决定应用以何种方式打开、同时存在多少个浮窗，以及打开后的交互方式。
 
 - **窗外关闭**：点击小窗外部区域时可选不执行、单击关闭或双击关闭
-- **小窗数量**：将系统允许同时存在的自由浮窗个数提升至指定值，1–6
+- **小窗数量**：将系统允许同时存在的自由浮窗个数提升至指定值，1–5
 - **解除限制**：原本不支持自由浮窗的应用也能以小窗打开
 - **通知中心**：点击通知与通知横幅时以自由浮窗打开，横幅会先收起，不遮挡新窗口
 - **控制中心**：长按控制中心磁贴时以自由浮窗打开，需先解除应用限制
@@ -106,7 +112,7 @@
 
 | 项 | 要求 |
 |---|---|
-| 系统 | ColorOS 16（Android 16） |
+| 系统 | ColorOS 16 与 17（Android 16 及以上）；其他版本尚未测试 |
 | 框架 | LSPosed，libxposed API 102 及以上 |
 | 导航方式 | 手势导航（三键导航下底角区域与返回键冲突，模块保持关闭） |
 | 侧边栏 | 「更多」面板依赖智能侧边栏，未开启时该面板不可用 |
@@ -117,8 +123,7 @@
 
 ## 已知限制
 
-- 依赖厂商私有的自由浮窗与智能侧边栏接口，仅适用于 ColorOS 16
-- 应用之间的跳转暂不支持以小窗打开
+- 依赖厂商私有的自由浮窗与智能侧边栏接口，仅适用于 ColorOS 16 与 17；其他版本尚未测试
 - 通知与控制中心的浮窗启动需要系统对应的入口存在
 - 小布识屏与屏幕翻译固定到扇形菜单后，受系统版本差异影响无法直接拉起；需要这两项功能时，从「更多」面板中打开可正常使用
 
