@@ -16,32 +16,36 @@
 
 ## 功能
 
-### 呼出方式
-
-- **底角手势**：从屏幕左下角或右下角斜向内上滑，呼出扇形菜单
-- **触发位置**：左右下角、仅左下角、仅右下角三档可分别设置
-- **触发范围**：调整底角手势的识别区域大小，适配不同握持习惯
+设置分为三组：扇形相关、小窗交互与生效范围。以下按分组说明。
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/trigger-range.jpg" width="330" alt="触发范围设置页" />
+  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/home.jpg" width="330" alt="模块首页：三组入口" />
 </p>
 
-### 扇形菜单
+### 扇形相关
 
-菜单由模块自行绘制，条目数、顺序与判定范围都在模块内设置，与智能侧边栏互不影响。
+呼出扇形菜单的方式，以及手指与图标的判定范围。
 
+- **触发位置**：左右下角、仅左下角、仅右下角三档
+- **保持挂起**：松手后菜单不收起，可以继续滑动点选应用
+- **触发范围**：底角手势的识别区域大小，24–160 dp
+- **命中范围**：手指与图标的判定半径，40–140 dp，默认 100 dp；拖动滑条时实时预览每一格的命中圈
+- **数量上限**：扇形中同时显示的条目数，1–6；「更多」入口不占位
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/settings-radial.jpg" width="330" alt="扇形相关设置页" />
+</p>
+
+### 扇形应用
+
+菜单由模块自行绘制，条目与顺序独立于智能侧边栏。
+
+- **混合固定**：应用、分身应用、侧边栏工具与快捷入口可加入同一份列表
+- **拖动排序**：长按拖动调整顺序，最多六项
 - **滑动选中**：滑到某一格时该图标放大至 1.2 倍作为反馈，判定依据是手指与图标圆心的距离，松手即启动
-- **命中范围**：调整手指与图标的判定半径（40–140 dp，默认 140 dp），拖动滑条时实时预览每一格的命中圈
-- **数量上限**：扇形中同时显示的条目数（1–6），「更多」入口不占位
-- **保持挂起**：松手后菜单不收起，可直接点选
-- **快捷项固定**：应用、分身应用、侧边栏工具与快捷入口可混合固定，最多六项，长按拖动排序
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/hit-range-preview.jpg" width="330" alt="命中范围实时预览" />
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/radial-apps.jpg" width="330" alt="扇形菜单设置页" />
 </p>
 
 ### 「更多」面板
@@ -56,32 +60,38 @@
   <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/more-panel.jpg" width="330" alt="更多面板：收藏与最近" />
 </p>
 
-### 小窗扩展
+### 小窗交互
 
-决定应用以何种方式打开，以及系统允许同时存在多少个浮窗。
+决定应用以何种方式打开、同时存在多少个浮窗，以及打开后的交互方式。
 
-- **上限数量**：将系统允许同时存在的自由浮窗个数提升至指定值（1–6），默认保持系统原值
+- **窗外关闭**：点击小窗外部区域时可选不执行、单击关闭或双击关闭
+- **小窗数量**：将系统允许同时存在的自由浮窗个数提升至指定值，1–6
 - **解除限制**：原本不支持自由浮窗的应用也能以小窗打开
 - **通知中心**：点击通知与通知横幅时以自由浮窗打开，横幅会先收起，不遮挡新窗口
 - **控制中心**：长按控制中心磁贴时以自由浮窗打开，需先解除应用限制
-- **应用跳转**：应用之间互相打开时以自由浮窗启动，分享面板同样适用；选文件与授权界面保持全屏
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/zoom-options.jpg" width="330" alt="小窗扩展设置页" />
-</p>
-
-### 关闭与切换
-
-- **窗外关闭**：点击小窗外部区域时可选不执行、单击关闭或双击关闭
+- **应用跳转**：应用之间互相打开时以自由浮窗启动，覆盖登录、分享与深链；选文件与授权界面保持全屏
 - **快速上滑**：在普通小窗底部横条上快速上滑，切换为迷你小窗
 
-### 运行控制
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/settings-zoom.jpg" width="330" alt="小窗交互设置页" />
+</p>
+
+### 生效范围
+
+决定模块在什么情况下暂停。三项都只暂停扇形呼出，小窗相关能力不受影响。
 
 - **排除列表**：列表内的应用在前台时停止全部修改，离开后自动恢复
-- **横屏暂停**：横屏时暂停扇形呼出，恢复竖屏后自动启用
-- **游戏模式暂停**：系统进入游戏模式时暂停扇形呼出，退出后自动启用
+- **横屏模式**：横屏时暂停扇形呼出，恢复竖屏后自动启用
+- **游戏模式**：系统进入游戏模式时暂停扇形呼出，退出后自动启用
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Hoerire/FlymeFreeform/main/docs/images/settings-scope.jpg" width="330" alt="生效范围设置页" />
+</p>
+
+### 其他
+
 - **锁屏与息屏停用**：设备锁屏或熄屏时停止一切响应，解锁后恢复
-- **详细日志**：按需开启，用于反馈问题时导出诊断信息
+- **详细日志**：按需开启，用于反馈问题时导出诊断信息；关闭时不产生任何诊断开销
 
 ## 安装
 
